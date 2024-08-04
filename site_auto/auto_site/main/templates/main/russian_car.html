@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+<p>lksemogneotg</p>
+{% for a in car %}
+    <div class="car">
+        <h2>{{ a.model }}</h2>
+        <p>{{ a.description_auto }}</p>
+    </div>
+{% endfor %}
+{% endblock %}

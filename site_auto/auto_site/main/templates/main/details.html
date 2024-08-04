@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Список деталей{% endblock %}
+
+{% block content %}
+<h2>Список деталей автомобилей</h2>
+<ul>
+{% for d in details %}
+    <li>
+        <h3>{{ d.model_details }}</h3>
+        <p>Цена: {{ d.vin }}</p>
+        <p>Описание: {{ d.description_details }}</p>
+    </li>
+{% empty %}
+
+{% endfor %}
+</ul>
+{% endblock %}

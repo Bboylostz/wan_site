@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Список автомобилей{% endblock %}
+
+{% block content %}
+<h2>Список автомобилей</h2>
+<ul>
+{% for car in cars %}
+    <li>
+        <h3>{{ car.model }}</h3>
+        <p>Цена: {{ car.price }}</p>
+        <p>Описание: {{ car.description_auto }}</p>
+    </li>
+{% empty %}
+    <li>В списке нет автомобилей.</li>
+{% endfor %}
+</ul>
+{% endblock %}

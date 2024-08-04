@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>сайт про машины</title>
+    <style>
+        body {
+            background-image: url('https://avatars.mds.yandex.net/i?id=38b080860be1eacfa38cce527f5c80d0_l-8358323-images-thumbs&n=13');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            height: calc(100vh - 60px); /* Вычитаем высоту header */
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Расстояние между полями формы */
+        }
+
+        .search-form {
+            margin-left: auto; /* Сдвигает форму поиска вправо */
+        }
+
+        h1 {
+            color: gold; /* Золотой цвет для заголовка */
+            flex-grow: 1; /* Заголовок растягивается, чтобы занять доступное пространство */
+            text-align: center; /* Центрирование текста заголовка */
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+        }
+        nav, aside {
+            padding: 20px;
+            background-color: rgba(255, 255, 255);
+        }
+
+        main {
+        flex-grow: 1;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачная подложка */
+        display: flex; /* Используйте flex вместо block */
+        justify-content: center; /* Выравнивание по горизонтали */
+        align-items: center; /* Выравнивание по вертикали */
+        flex-direction: column; /* Добавлено для вертикального расположения */
+    }
+            footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+        @keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <form action="/register" method="post" class="auth-form">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Пароль">
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <h1>Выбери лучшую машину</h1>
+        <form action="/search" method="get" class="search-form">
+            <input type="text" name="query" placeholder="Поиск...">
+            <button type="submit">Найти</button>
+        </form>
+    </header>
+
+    <div class="content">
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная страница</a></li>
+                <li><a href="{% url 'russian_car' %}">Русские машины</a></li>
+                <li><a href="{% url 'car' %}">список машин</a></li>
+                <li><a href="{% url 'details' %}">Детали для машин</a></li>
+
+                <!-- Добавьте больше категорий по мере необходимости -->
+            </ul>
+        </nav>
+        <main>
+
+
+
+
+            <p>jkggjb</p>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+        <aside>
+            <img src="ad.jpg" alt="Реклама">
+        </aside>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 сайт про машины
+
+</footer>
+
+</body>
+</html>

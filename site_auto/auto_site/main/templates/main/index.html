@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+<h1>главная страница</h1>
+
+{% block content %}
+    <div class="container">
+        <img src="{{ images }}" alt="Описание изображения">
+    </div>
+{% endblock %}
+
+
+
+
+<!--    {% for image in images %}-->
+<!--        <img src="{{ image }}" alt="Image description">-->
+<!--    {% endfor %}-->
